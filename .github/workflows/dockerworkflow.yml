@@ -16,13 +16,10 @@ jobs:
         uses: actions/checkout@v2
         
       # More info here: https://github.com/actions/setup-dotnet
-      - name: Setup dotnet 3.1
-        uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1
-          
-      - name: Test it
-        run: dotnet test 
+          dotnet-version: '3.1.100' # SDK Version to use.
+        - run: dotnet test
 
   build:
     runs-on: ubuntu-latest
