@@ -7,11 +7,21 @@ on:
     branches: [ master ]
 
 jobs:
+    
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code 
+        uses: actions/checkout@v2
+      - name: Setup dotnet 3.1
+        uses: ./
+        with:
+          dotnet-version: 3.1
+      - name: Test it
+        run: dotnet test 
 
   build:
-
     runs-on: ubuntu-latest
-
     steps:    
       
       - name: Checkout code 
